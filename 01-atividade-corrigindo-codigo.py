@@ -10,39 +10,51 @@ os . system ("cls || clear" )
 7. A média de todos os números inseridos.
 8. Mostrar os números lidos na ordem inversa.
 """
-# Variáveis para armazenar as estatísticas
+qtd_numero=5
 lista_numero=[]
-quantidade_positivo_negativo=[]
-maior_numero = 0
-menor_numero = 0
+contador_pares=0
+contador_impares=0
+contador_positivo=0
+contador_negativo=0
+pares=0
+impares=0
+numero=0
+for i in range (qtd_numero):
+    while True:
+     numero = int(input(f"digite o {i+1}º: "))
+     numero.append(numero)
 
-quantidade_numero=5
+#verificar pares e impares:
 
-# Variáveis para armazenar os números
-for i in range(quantidade_numero):
-    numero = int(input(f"digite seu  {i+1}ª numero: "))
-    lista_numero.append(numero)
-    break
+     if numero % 2 == 0:
+       contador_pares +=1
+     else:
+       contador_impares +=1
 
-#processando cada numero
-def verificar_pares_impares(numero):
-    qtd_pares=0
-    qtd_impares=0
-    for numero in numero:
-        if numero % 2 == 0:
-            qtd_pares +=1
-        else:
-            qtd_impares +=1
-   
+if len(pares) > 0:
+    media_pares = sum(pares) / len(pares)
+else:
+    media_pares = 0
 
-# Calculando as médias
+if len(impares) > 0:
+    media_impares = sum(impares) / len(impares)
+else:
+    media_impares= 0
 
-# Mostrando números na ordem inversa
-pares,impares=verificar_pares_impares(lista_numero)
-for i in range (quantidade_numero):
-    numero=int(input(f"digite o {i+1}ª: numero "))
+#verificar positivo negativo
+if numero >=0:
+  contador_positivo +=1
+else:
+  contador_negativo +=1
 
-print(f"quantidade de pares: {quantidade_pares} ")
-print(f"quantidadede impares: {quantidade_impares} ")
+for numero in reversed(lista_numero):
+    print(numero) 
 
 
+print(f"quantidade de numeros pares: {contador_pares}")
+print(f"quantidade de numeros impares: {contador_impares}")
+print(f"quantidade de numero positivo: {contador_positivo}")
+print(f"quantidade de numero negarivo: {contador_negativo}")
+print(f"media de pares: {media_pares}")
+print(f"media de inpares: {media_impares}")
+ 
